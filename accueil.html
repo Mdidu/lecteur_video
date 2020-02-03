@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
+		<title> API video/audio </title>
+	</head>
+	
+	<body>
+		<video id="video" src="video/ReZero01VOSTFR.mp4" onclick="play('video', this)" onmouseover="timerF('video')" ontimeupdate="update(this)"></video>
+		<div>
+			<!-- Partie début/pause/fin de la video-->
+			<button id="play" onclick="play('video', this)" onmouseover="timerF('video')"> Play </button>
+			<button id="stop" onclick="stop('video')"> Stop</button>
+			<!-- Partie volume-->
+			<button id="muted" onclick="muted('video')"> Muted</button>
+			<span id="volume">
+				<a class="bar1" onclick="volume('video', 0)"></a>
+				<a class="bar2" onclick="volume('video', 0.25)"></a>
+				<a class="bar3" onclick="volume('video', 0.5)"></a>
+				<a class="bar4" onclick="volume('video', 0.75)"></a>
+				<a class="bar5" onclick="volume('video', 1)"></a>
+			</span>
+
+			<!-- Partie temps-->
+			<div>
+				<div id="progressBarControl">
+					<div id="progressBar">Pas de lecture</div>	
+				</div>
+			</div>
+			<button id="recule" onclick="reculer('video', 10)"> -10s </button>
+			<button id="avance" onclick="avancer('video', 10)"> +10s </button>
+			<input id="loop" type="checkbox" onchange="repeter('video')" />
+			<span>Répéter</span>
+
+			<span id="dureeEcoulee"> 00:00</span><br />
+			<span id="time"> 00:00:00</span>
+		</div>
+
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
